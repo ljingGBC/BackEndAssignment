@@ -8,4 +8,6 @@ db.mongoose = mongoose;
 
 db.user = require("./user");
 
+db.message = require("./message");
+
 module.exports = db;
