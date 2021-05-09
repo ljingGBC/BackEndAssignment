@@ -40,6 +40,11 @@ app.get("/", (req, res) => {
     res.json({ message: "Welcome to Lei Jing's application." });
 });
 
+
+//add routes
+require('./routes/authRoutes')(app);
+require('./routes/userRoutes')(app);
+
 const port = process.env.PORT;
 app.listen({ port }, () =>
   //http://localhost:5000
