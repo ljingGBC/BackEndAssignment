@@ -29,9 +29,10 @@ const connect = mongoose.connect(url,
 });
 
 connect.then((db) => {
-      console.log('Connected correctly to MongoDB!');
+      console.log('Connected Successfully to MongoDB!');
 }, (err) => {
-      console.log(err);
+      console.log("Connection Error!",err);
+      process.exit();
 });
 
 // simple route to test connection
