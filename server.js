@@ -45,6 +45,18 @@ app.get("/", (req, res) => {
 require('./routes/authRoutes')(app);
 require('./routes/userRoutes')(app);
 
+//for Message
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+app.use(express.static(__dirname));
+
+//router for message
+require('./routes/messageRouters')(app);
+//create a connection
+io.on('connection', () =>{
+    console.log('a user is connected')
+})
+
 const port = process.env.PORT;
 app.listen({ port }, () =>
   //http://localhost:5000
